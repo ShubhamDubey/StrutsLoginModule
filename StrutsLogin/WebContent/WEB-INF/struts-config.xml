@@ -1,0 +1,19 @@
+<struts-config>
+
+	<form-beans>
+		<form-bean name="User" type="com.niit.formbeans.User"></form-bean>
+	</form-beans>
+
+	<action-mappings>
+		<action path="/login" name="User" scope="session"
+			validate="true" input="/login.jsp"
+			type="com.niit.controllers.LoginController">
+			<forward name="success" path="/success.jsp" />
+			<forward name="failed" path="/failed.jsp" />
+		</action>
+	</action-mappings>
+
+	<message-resources
+		parameter="com.niit.resources.Messages" />
+
+</struts-config>
